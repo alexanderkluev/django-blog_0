@@ -1,0 +1,21 @@
+{% extends 'home/index.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrap">
+        <main class="main-posts-list">
+            <h1 class="article-title">Контакты</h1>
+            <div class="comment-field">   
+                <article class="article">
+                    <div class="article-text-column">
+                        <h2 class="contact-title">
+                            {{ "admin" }}
+                        </h2>   
+                        <div class="article-content">
+                            <p>{{ "Почта: admin@admin.ad" }}</p>
+                        </div>
+                    </div>
+                </article>
+            </div> 
+        </main>      
+    </div>
+{% endblock %}

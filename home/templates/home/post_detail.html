@@ -1,0 +1,26 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class = 'post-container'>
+        <div class="cont">
+            <h1 class = 'post-title'>{{ obj.post.title }}</h1>
+        </div>    
+        <div class = 'txt-field'>
+            <p class = 'post-text'>{{ obj.post.text|linebreaksbr }}</p>   
+        </div>
+        <div class="cont">
+            <h2>{{'Comments'}}</h2>
+        </div>
+        <a href="{% url 'comment_new' pk=obj.post.pk %}" class="b1"><span>Добавить комментарий</span></a>
+        <ul>
+                {% for comment in obj.comments.all %}
+                    <div class="comment-field">
+                        <li>{{comment.published_date}}</li>
+                        <li>{{comment.author}}</li>
+                        <p>{{comment.text}}</p>
+                    </div>
+                {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

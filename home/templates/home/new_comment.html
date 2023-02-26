@@ -1,0 +1,9 @@
+{% extends 'home/index.html' %}
+{% block content %}
+ <h1>New comment</h1>
+ <form method = "POST" class="coment-form">
+    {{ form.as_p}}
+    {% csrf_token %}
+    <button type = "submit" class = "b1">отправить</button>
+ </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'home/index.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrap">         
+        <section class="tags">
+            <h2 class="sidebar-title">Теги</h2>
+                <ul class="tags-list">
+                        {% for tag in tags %}
+                        <li class="tags-item">
+                            <a class="tags-link" href="{% url 'tag_detail' pk=tag.pk %}">{{ tag.tag_name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        </section>   
+    </div>
+{% endblock %}
